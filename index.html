@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayTera GmbH – Payment-Lösungen für Ihr Unternehmen</title>
+  <meta name="description" content="PayTera GmbH – Professionelle Payment-Lösungen für Gastro, Einzelhandel und mehr. POS-Terminals, EC-Karten, Software. Baar, Schweiz." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #0e2040;
+      --navy-light: #132952;
+      --blue: #1a56db;
+      --blue-light: #4d8ef0;
+      --blue-pale: #dbeafe;
+      --white: #ffffff;
+      --gray-100: #f4f6fa;
+      --gray-200: #e8ecf4;
+      --gray-400: #94a3b8;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--gray-800);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-logo-icon svg { width: 22px; height: 22px; }
+    .nav-logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo-text span { color: var(--blue-light); }
+    .nav-contact {
+      color: var(--blue-pale);
+      font-size: 14px;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+    .nav-contact:hover { opacity: 1; }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(26,86,219,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(26,86,219,0.25);
+      color: var(--blue-light);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(77,142,240,0.3);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -1px;
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 1.25rem;
+    }
+    .hero h1 span { color: var(--blue-light); }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray-400);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .hero-cta:hover { background: #1648c0; }
+
+    /* PHOTO SECTION */
+    .photo-section {
+      background: var(--gray-100);
+      padding: 4rem 2rem;
+    }
+    .photo-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .photo-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 16/10;
+      background: var(--navy-mid);
+    }
+    .photo-card .photo-illustration {
+      width: 100%;
+      height: 100%;
+    }
+    .photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(10,22,40,0.85));
+      color: white;
+      padding: 1.25rem 1.25rem 1rem;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* SERVICES */
+    .services {
+      padding: 4.5rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+      margin-bottom: 2.5rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .service-card {
+      background: var(--gray-100);
+      border-radius: 14px;
+      padding: 1.5rem;
+      border: 1px solid var(--gray-200);
+    }
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--blue-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .service-icon svg { width: 22px; height: 22px; stroke: var(--blue); }
+    .service-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .service-card p {
+      font-size: 13.5px;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--navy);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.4px;
+      margin-bottom: 0.75rem;
+    }
+    .contact p {
+      color: var(--gray-400);
+      font-size: 15px;
+      margin-bottom: 2rem;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .contact-link:hover { background: #1648c0; }
+
+    /* FOOTER */
+    footer {
+      background: #060f1e;
+      padding: 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 1.25rem;
+    }
+    .footer-logo-icon {
+      width: 28px; height: 28px;
+      background: var(--blue);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-logo-icon svg { width: 17px; height: 17px; }
+    .footer-logo-text {
+      font-size: 16px; font-weight: 700;
+      color: var(--white); letter-spacing: -0.3px;
+    }
+    .footer-logo-text span { color: var(--blue-light); }
+    .footer-info {
+      font-size: 13px;
+      color: #3a4a60;
+      line-height: 1.9;
+    }
+    .footer-info a { color: #3a4a60; text-decoration: none; }
+    .footer-info a:hover { color: var(--blue-light); }
+    .footer-divider {
+      width: 40px; height: 1px;
+      background: #1a2a40;
+      margin: 1.25rem auto;
+    }
+
+    @media (max-width: 600px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+      nav { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" aria-label="PayTera GmbH">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1" y="5" width="20" height="13" rx="2.5" stroke="white" stroke-width="1.6"/>
+        <line x1="1" y1="9.5" x2="21" y2="9.5" stroke="white" stroke-width="1.6"/>
+        <rect x="3.5" y="12" width="5" height="2.5" rx="1" fill="white"/>
+        <rect x="10" y="12" width="3" height="2.5" rx="1" fill="white" opacity="0.55"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Pay<span>Tera</span></span>
+  </a>
+  <a href="mailto:info@paytera.ch" class="nav-contact">info@paytera.ch</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tag">Payment-Lösungen für die Schweiz</div>
+  <h1>Zahlen einfach gemacht —<br><span>für Ihr Unternehmen.</span></h1>
+  <p>Vom POS-Terminal bis zur Kassensoftware. PayTera begleitet Gastronomen, Einzelhändler und Dienstleister mit zuverlässigen Payment-Lösungen.</p>
+  <a href="mailto:info@paytera.ch" class="hero-cta">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/>
+    </svg>
+    Jetzt Kontakt aufnehmen
+  </a>
+</header>
+
+<!-- PHOTOS -->
+<section class="photo-section" aria-label="Unsere Lösungen">
+  <div class="photo-grid">
+    <div class="photo-card">
+      <svg class="photo-illustration" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="480" height="300" fill="#0e2040"/>
+        <rect x="155" y="60" width="170" height="110" rx="12" fill="#132952" stroke="#1a56db" stroke-width="1.5"/>
+        <rect x="155" y="60" width="170" height="36" rx="12" fill="#1a56db"/>
+        <rect x="155" y="84" width="170" height="12" fill="#1a56db"/>
+        <rect x="170" y="115" width="30" height="22" rx="4" fill="#243a6a"/>
+        <rect x="170" y="115" width="30" height="22" rx="4" fill="none" stroke="#2a4a80" stroke-width="1"/>
+        <rect x="208" y="115" width="30" height="22" rx="4" fill="#243a6a"/>
+        <rect x="246" y="115" width="30" height="22" rx="4" fill="#243a6a"/>
+        <rect x="284" y="115" width="30" height="22" rx="4" fill="#243a6a"/>
+        <rect x="170" y="144" width="30" height="22" rx="4" fill="#243a6a"/>
+        <rect x="208" y="144" width="30" height="22" rx="4" fill="#243a6a"/>
+        <rect x="246" y="144" width="30" height="22" rx="4" fill="#243a6a"/>
+        <rect x="284" y="144" width="68" height="22" rx="4" fill="#1a56db"/>
+        <rect x="155" y="175" width="170" height="1" fill="#1a3060"/>
+        <text x="240" y="200" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#4d8ef0" font-weight="500">Sicheres Terminal · NFC · Chip</text>
+        <circle cx="390" cy="80" r="40" fill="#132952" stroke="#1a3a70" stroke-width="1"/>
+        <rect x="372" y="66" width="36" height="24" rx="4" fill="none" stroke="#4d8ef0" stroke-width="1.5"/>
+        <rect x="372" y="66" width="36" height="8" rx="4" fill="#1a56db"/>
+        <rect x="376" y="78" width="8" height="6" rx="1.5" fill="#243a6a"/>
+        <text x="390" y="130" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#4d6080">EC-Karte</text>
+        <circle cx="90" cy="220" r="30" fill="#132952" stroke="#1a3a70" stroke-width="1"/>
+        <path d="M78 220 Q90 210 102 220 Q90 230 78 220Z" fill="none" stroke="#4d8ef0" stroke-width="1.5"/>
+        <circle cx="90" cy="220" r="5" fill="#1a56db"/>
+        <text x="90" y="262" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#4d6080">Kontaktlos</text>
+      </svg>
+      <div class="photo-caption">POS-Terminals &amp; Kartenlesegeräte</div>
+    </div>
+
+    <div class="photo-card">
+      <svg class="photo-illustration" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="480" height="300" fill="#0e2040"/>
+        <rect x="140" y="40" width="200" height="340" rx="16" fill="#132952" stroke="#1a3a70" stroke-width="1.5"/>
+        <rect x="152" y="60" width="176" height="100" rx="8" fill="#0a1628"/>
+        <rect x="160" y="68" width="80" height="10" rx="3" fill="#1a56db" opacity="0.8"/>
+        <rect x="160" y="84" width="120" height="8" rx="3" fill="#243a6a"/>
+        <rect x="160" y="97" width="100" height="8" rx="3" fill="#243a6a"/>
+        <rect x="160" y="122" width="50" height="26" rx="6" fill="#1a56db"/>
+        <text x="185" y="139" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="white" font-weight="600">Zahlen</text>
+        <rect x="152" y="175" width="80" height="50" rx="8" fill="#0a1628"/>
+        <rect x="244" y="175" width="84" height="50" rx="8" fill="#0a1628"/>
+        <text x="192" y="204" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#4d8ef0">Umsatz heute</text>
+        <text x="192" y="217" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="white" font-weight="600">CHF 842</text>
+        <text x="286" y="204" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#4d8ef0">Transaktionen</text>
+        <text x="286" y="217" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="white" font-weight="600">37</text>
+        <rect x="152" y="238" width="176" height="1" fill="#1a3060"/>
+        <circle cx="240" cy="260" r="5" fill="#1a3a70"/>
+        <circle cx="255" cy="260" r="5" fill="#1a56db"/>
+        <circle cx="270" cy="260" r="5" fill="#1a3a70"/>
+        <rect x="80" y="100" width="50" height="32" rx="6" fill="#132952" stroke="#1a3060" stroke-width="1"/>
+        <rect x="84" y="105" width="18" height="12" rx="2" fill="#0a1628"/>
+        <rect x="84" y="105" width="18" height="5" rx="2" fill="#1a56db"/>
+        <rect x="85" y="119" width="5" height="4" rx="1" fill="#243a6a"/>
+        <rect x="92" y="119" width="5" height="4" rx="1" fill="#243a6a"/>
+        <rect x="99" y="119" width="5" height="4" rx="1" fill="#1a56db"/>
+        <rect x="370" y="150" width="50" height="32" rx="6" fill="#132952" stroke="#1a3060" stroke-width="1"/>
+        <rect x="374" y="155" width="18" height="12" rx="2" fill="#0a1628"/>
+        <rect x="374" y="155" width="18" height="5" rx="2" fill="#1a56db"/>
+        <path d="M392 165 Q400 160 408 165 Q400 170 392 165Z" fill="none" stroke="#4d8ef0" stroke-width="1.2"/>
+        <circle cx="400" cy="165" r="3" fill="#1a56db"/>
+      </svg>
+      <div class="photo-caption">Kassensoftware &amp; Echtzeit-Auswertungen</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" aria-labelledby="services-heading">
+  <p class="section-label">Was wir bieten</p>
+  <h2 class="section-title" id="services-heading">Alles aus einer Hand</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/>
+        </svg>
+      </div>
+      <h3>POS-Terminals</h3>
+      <p>Moderne Kartenlesegeräte mit NFC, Chip &amp; PIN — für Tisch, Theke und Mobilbetrieb.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/>
+        </svg>
+      </div>
+      <h3>Kassensoftware</h3>
+      <p>Intuitive Software für Gastro, Retail &amp; Dienstleister — inkl. Tagesabschluss und Berichte.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+        </svg>
+      </div>
+      <h3>Echtzeit-Auswertung</h3>
+      <p>Umsätze, Transaktionen und Berichte — jederzeit abrufbar, übersichtlich und verlässlich.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <h3>Sicherheit &amp; Compliance</h3>
+      <p>PCI-DSS-konform, verschlüsselt und zuverlässig — Ihr Zahlungsverkehr in sicheren Händen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">Bereit loszulegen?</h2>
+  <p>Schreiben Sie uns — wir finden die passende Lösung für Ihr Unternehmen.</p>
+  <a href="mailto:info@paytera.ch" class="contact-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/>
+    </svg>
+    info@paytera.ch
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <div class="footer-logo-icon">
+      <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1" y="3" width="15" height="11" rx="2" stroke="white" stroke-width="1.4"/>
+        <line x1="1" y1="7" x2="16" y2="7" stroke="white" stroke-width="1.4"/>
+        <rect x="3" y="9.5" width="4" height="2" rx="0.8" fill="white"/>
+      </svg>
+    </div>
+    <span class="footer-logo-text">Pay<span>Tera</span></span>
+  </div>
+
+  <div class="footer-info">
+    PayTera GmbH<br>
+    Oberdorfstrasse 11, 6340 Baar – Zug, Schweiz<br>
+    <a href="mailto:info@paytera.ch">info@paytera.ch</a>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-info">
+    Geschäftsführer: Salman Topal<br>
+    &copy; 2026 PayTera GmbH · Alle Rechte vorbehalten
+  </div>
+</footer>
+
+</body>
+</html>
